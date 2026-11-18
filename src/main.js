@@ -2725,6 +2725,15 @@ function initLandingIntroAnimation() {
 
   if (!overlay || !whitePanel || !canvas) return;
 
+  // On mobile view: Clean static layout, bypass heavy intro animation
+  if (window.innerWidth <= 768) {
+    document.body.classList.remove("intro-active");
+    document.body.classList.add("intro-revealed");
+    overlay.classList.add("is-finished");
+    overlay.style.display = "none";
+    return;
+  }
+
   // If directly deep-linking to another view, dismiss intro immediately
   const hash = window.location.hash;
   const search = window.location.search;

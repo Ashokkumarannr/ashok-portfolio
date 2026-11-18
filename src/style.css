@@ -9923,3 +9923,586 @@ body.home-view-active .contact-btn {
   stroke: #FFFFFF !important;
   fill: var(--bg-pill, rgba(0, 0, 0, 0.6)) !important;
 }
+
+/* ==========================================================================
+   DEDICATED MOBILE RESPONSIVE ENGINE (STATIC, CLEAN & INTUITIVE FOR <= 768px)
+   Strictly scoped to mobile/tablet screens. Leaves desktop view 100% untouched.
+   ========================================================================== */
+
+@media (max-width: 768px) {
+
+  /* 1. Global Safe Mobile Viewport */
+  html, body {
+    overflow-x: hidden !important;
+    width: 100% !important;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* 2. Intro Screen: Bypassed on Mobile for Instant Static Load */
+  #introScreen,
+  #introOverlay,
+  .intro-char-stage,
+  .intro-white-panel,
+  .intro-push-edge,
+  .intro-skip-btn {
+    display: none !important;
+  }
+
+  body.intro-active .site-header,
+  body.intro-active .hero-bio-container,
+  body.intro-active .bottom-dock-wrapper,
+  body.intro-active .pills-layer,
+  body.intro-active .connectors-layer,
+  body.intro-active .pins-layer {
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: none !important;
+    pointer-events: auto !important;
+  }
+
+  /* 3. Sticky Top Header */
+  .site-header {
+    padding: 10px 14px !important;
+    height: auto !important;
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    z-index: 100 !important;
+  }
+
+  .header-inner {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    width: 100% !important;
+    gap: 10px !important;
+  }
+
+  .brand-logo {
+    font-size: 20px !important;
+    flex-shrink: 0 !important;
+  }
+
+  .nav-links-wrap {
+    display: flex !important;
+    overflow-x: auto !important;
+    scrollbar-width: none !important;
+    -webkit-overflow-scrolling: touch !important;
+    max-width: calc(100vw - 125px) !important;
+    padding: 2px 0 !important;
+  }
+
+  .nav-links-wrap::-webkit-scrollbar {
+    display: none !important;
+  }
+
+  .nav-links {
+    gap: 12px !important;
+    margin: 0 !important;
+    padding: 0 4px !important;
+  }
+
+  .nav-item {
+    font-size: 11px !important;
+    letter-spacing: 0.08em !important;
+    white-space: nowrap !important;
+  }
+
+  .contact-btn {
+    font-size: 11px !important;
+    padding: 5px 12px !important;
+    flex-shrink: 0 !important;
+    white-space: nowrap !important;
+  }
+
+  /* 4. HOME HERO VIEW ON MOBILE */
+  #view-home {
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+    height: 100vh !important;
+    height: 100dvh !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-between !important;
+    padding-top: 60px !important;
+  }
+
+  .hero-section {
+    min-height: auto !important;
+    flex: 1 0 auto !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+    padding: 20px 12px 10px !important;
+    width: 100% !important;
+  }
+
+  .hero-canvas {
+    width: 100% !important;
+    max-width: 100vw !important;
+    display: flex !important;
+    justify-content: center !important;
+  }
+
+  .hero-svg {
+    width: 100% !important;
+    height: auto !important;
+    max-height: 42vh !important;
+  }
+
+  .hero-bio-container {
+    margin-top: 12px !important;
+    margin-bottom: 8px !important;
+    padding: 0 16px !important;
+  }
+
+  .hero-bio-text {
+    font-size: clamp(12.5px, 3.4vw, 14.5px) !important;
+    line-height: 1.5 !important;
+    max-width: 92vw !important;
+  }
+
+  .bottom-dock-wrapper {
+    padding: 8px 12px 18px !important;
+    width: 100% !important;
+  }
+
+  .dock-pill {
+    max-width: 94vw !important;
+    overflow-x: auto !important;
+    scrollbar-width: none !important;
+    padding: 5px 8px !important;
+    gap: 6px !important;
+    margin: 0 auto !important;
+  }
+
+  .dock-pill::-webkit-scrollbar {
+    display: none !important;
+  }
+
+  .mode-btn {
+    font-size: 10.5px !important;
+    padding: 4px 8px !important;
+    height: 30px !important;
+    white-space: nowrap !important;
+  }
+
+  /* 5. ABOUT VIEW ON MOBILE (CLEAN, STATIC EDITORIAL PRESENTATION) */
+  #view-about {
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+    height: 100vh !important;
+    height: 100dvh !important;
+    -webkit-overflow-scrolling: touch !important;
+    padding-top: 60px !important;
+  }
+
+  .photo-stack-scroll-track {
+    height: auto !important;
+    min-height: auto !important;
+    position: static !important;
+  }
+
+  .photo-stack-stage {
+    position: static !important;
+    height: auto !important;
+    min-height: auto !important;
+    padding: 24px 16px 20px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+  }
+
+  /* Front Portrait Photo Card of Ashok */
+  .photo-card-0 {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    transform: none !important;
+    margin: 0 auto 18px !important;
+    width: 140px !important;
+    height: 180px !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    border-radius: 16px !important;
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12) !important;
+    flex-shrink: 0 !important;
+    z-index: 2 !important;
+  }
+
+  .photo-card-0 .photo-inner {
+    border-radius: 14px !important;
+    overflow: hidden !important;
+    width: 100% !important;
+    height: 100% !important;
+  }
+
+  .photo-card-0 .photo-img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+  }
+
+  /* Centered Editorial Biography */
+  .editorial-content {
+    position: static !important;
+    top: auto !important;
+    left: auto !important;
+    transform: none !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+    text-align: center !important;
+    margin: 0 auto 24px !important;
+    width: 100% !important;
+    max-width: 420px !important;
+    padding: 0 10px !important;
+  }
+
+  .editorial-heading {
+    font-size: clamp(22px, 6.2vw, 28px) !important;
+    line-height: 1.25 !important;
+    margin-bottom: 8px !important;
+  }
+
+  .editorial-subheading {
+    font-size: 13.5px !important;
+    line-height: 1.45 !important;
+    margin-bottom: 8px !important;
+  }
+
+  .editorial-paragraph {
+    font-size: 12.5px !important;
+    line-height: 1.55 !important;
+    margin-bottom: 16px !important;
+  }
+
+  .editorial-cta-btn {
+    padding: 8px 22px !important;
+    font-size: 12px !important;
+    border-radius: 999px !important;
+    margin: 0 auto !important;
+  }
+
+  /* Editorial Photos: Horizontal Swipe Carousel */
+  .photo-stack-container {
+    position: static !important;
+    display: flex !important;
+    flex-direction: row !important;
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+    gap: 12px !important;
+    padding: 8px 4px 16px !important;
+    scrollbar-width: none !important;
+    -webkit-overflow-scrolling: touch !important;
+    width: 100% !important;
+    max-width: 100vw !important;
+    justify-content: flex-start !important;
+  }
+
+  .photo-stack-container::-webkit-scrollbar {
+    display: none !important;
+  }
+
+  .photo-card:not(.photo-card-0) {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    transform: none !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    flex: 0 0 115px !important;
+    width: 115px !important;
+    height: 155px !important;
+    border-radius: 12px !important;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08) !important;
+    padding: 4px !important;
+    background: #ffffff !important;
+    border: 1px solid rgba(0, 0, 0, 0.08) !important;
+  }
+
+  .photo-card:not(.photo-card-0) .photo-inner {
+    width: 100% !important;
+    height: 100% !important;
+    border-radius: 9px !important;
+    overflow: hidden !important;
+  }
+
+  .photo-card:not(.photo-card-0) .photo-img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    display: block !important;
+  }
+
+  .photo-scroll-hint {
+    display: none !important;
+  }
+
+  /* Journey Cards Section on Mobile */
+  .journey-section {
+    padding: 30px 14px 40px !important;
+  }
+
+  .journey-cards-deck {
+    height: auto !important;
+    max-width: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 18px !important;
+    align-items: center !important;
+  }
+
+  .journey-card {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    transform: none !important;
+    width: 100% !important;
+    max-width: 320px !important;
+    height: auto !important;
+    min-height: 290px !important;
+    padding: 20px 18px !important;
+  }
+
+  .card-blue,
+  .card-green,
+  .card-pink {
+    transform: none !important;
+  }
+
+  .journey-cards-deck.hover-blue .card-blue,
+  .journey-cards-deck.hover-pink .card-pink,
+  .journey-card.card-blue:hover,
+  .journey-card.card-pink:hover {
+    transform: none !important;
+  }
+
+  /* 6. SKILLS VIEW ON MOBILE (STATIC PILL CLUSTER) */
+  #view-skills {
+    overflow-y: auto !important;
+    height: 100vh !important;
+    height: 100dvh !important;
+    padding: 70px 16px 30px !important;
+    -webkit-overflow-scrolling: touch !important;
+  }
+
+  .skills-title-container {
+    margin-top: 14px !important;
+    margin-bottom: 20px !important;
+    text-align: center !important;
+  }
+
+  .skills-title {
+    font-size: clamp(30px, 8.5vw, 42px) !important;
+    line-height: 1.12 !important;
+  }
+
+  .skills-cluster {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    gap: 8px !important;
+    width: 100% !important;
+    max-width: 500px !important;
+    margin: 0 auto !important;
+  }
+
+  .skills-cluster-wrap {
+    overflow: visible !important;
+    padding: 0 !important;
+    margin: 0 auto !important;
+    width: 100% !important;
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    gap: 8px !important;
+  }
+
+  .pill-row {
+    display: contents !important;
+  }
+
+  .skill-pill {
+    font-size: 11px !important;
+    padding: 7px 14px !important;
+    border-radius: 999px !important;
+    white-space: nowrap !important;
+    animation: none !important;
+    transform: none !important;
+  }
+
+  /* 7. EXPERIENCE VIEW ON MOBILE */
+  #view-experience {
+    overflow-y: auto !important;
+    height: 100vh !important;
+    height: 100dvh !important;
+    -webkit-overflow-scrolling: touch !important;
+    padding-top: 55px !important;
+  }
+
+  .exp-stage {
+    display: flex !important;
+    flex-direction: column !important;
+    height: auto !important;
+    min-height: 100vh !important;
+  }
+
+  .exp-hero-section {
+    flex: 0 0 auto !important;
+    height: auto !important;
+    min-height: auto !important;
+    max-height: none !important;
+    padding: 24px 16px 16px !important;
+  }
+
+  .exp-watermark-text {
+    font-size: clamp(34px, 11vw, 62px) !important;
+    text-align: center !important;
+    display: block !important;
+    width: 100% !important;
+  }
+
+  .exp-runner-canvas-container {
+    display: none !important;
+  }
+
+  .exp-scroll-indicator {
+    display: none !important;
+  }
+
+  .exp-black-section {
+    flex: 1 0 auto !important;
+    height: auto !important;
+    min-height: auto !important;
+    max-height: none !important;
+    padding: 24px 14px 40px !important;
+  }
+
+  .exp-cards-grid {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 14px !important;
+    max-height: none !important;
+    overflow: visible !important;
+    padding: 0 !important;
+  }
+
+  .exp-card {
+    width: 100% !important;
+    padding: 16px 16px !important;
+  }
+
+  /* 8. PROJECT VIEW ON MOBILE */
+  #view-project {
+    overflow-y: auto !important;
+    height: 100vh !important;
+    height: 100dvh !important;
+    -webkit-overflow-scrolling: touch !important;
+    padding: 65px 10px 30px !important;
+  }
+
+  .laptop-workspace-wrap,
+  .laptop-chassis {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border-radius: 12px !important;
+    box-shadow: none !important;
+    background: transparent !important;
+  }
+
+  .mac-finder-window {
+    width: 100% !important;
+    border-radius: 12px !important;
+    margin: 0 !important;
+  }
+
+  .finder-window-body {
+    display: flex !important;
+    flex-direction: column !important;
+  }
+
+  .finder-sidebar {
+    width: 100% !important;
+    min-width: 100% !important;
+    max-width: 100% !important;
+    border-right: none !important;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08) !important;
+    padding: 8px 6px !important;
+    overflow-x: auto !important;
+    scrollbar-width: none !important;
+  }
+
+  .finder-sidebar::-webkit-scrollbar {
+    display: none !important;
+  }
+
+  .finder-folder-list {
+    display: flex !important;
+    flex-direction: row !important;
+    gap: 6px !important;
+    overflow-x: auto !important;
+    white-space: nowrap !important;
+    padding-bottom: 2px !important;
+  }
+
+  .finder-folder-item {
+    flex-shrink: 0 !important;
+    padding: 6px 10px !important;
+    border-radius: 8px !important;
+    font-size: 11px !important;
+  }
+
+  .finder-content-pane {
+    width: 100% !important;
+    padding: 12px 6px !important;
+  }
+
+  .finder-grid-container {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 10px !important;
+  }
+
+  /* 9. PLAY VIEW ON MOBILE */
+  #view-play {
+    overflow-y: auto !important;
+    height: 100vh !important;
+    height: 100dvh !important;
+    -webkit-overflow-scrolling: touch !important;
+    padding: 65px 12px 40px !important;
+  }
+
+  .play-arcade-header {
+    margin-bottom: 18px !important;
+    text-align: center !important;
+  }
+
+  .play-cards-row {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 20px !important;
+  }
+
+  .play-game-card {
+    width: 100% !important;
+    max-width: 340px !important;
+  }
+
+  /* 10. MODALS & SCRATCH CARD ON MOBILE */
+  .clean-modal {
+    padding: 12px !important;
+  }
+
+  .scratch-modal-card {
+    width: 94vw !important;
+    max-width: 380px !important;
+    max-height: 90vh !important;
+    overflow-y: auto !important;
+    padding: 18px 14px !important;
+  }
+}
