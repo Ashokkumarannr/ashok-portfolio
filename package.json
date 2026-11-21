@@ -4,12 +4,12 @@
   "description": "Interactive Portfolio Hero Section matching Ashok design",
   "type": "module",
   "scripts": {
-    "dev": "node sync-folders.cjs && vite",
-    "build": "node sync-folders.cjs && vite build",
+    "dev": "vite",
+    "build": "vite build",
     "sync": "node sync-folders.cjs",
     "preview": "vite preview"
   },
-  "devDependencies": {
+  "dependencies": {
     "vite": "^8.3.5"
   }
 }
